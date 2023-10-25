@@ -24,6 +24,10 @@ public class SpringSecurity {
                         form ->  form.loginPage("/login").loginProcessingUrl("/login")
                                 .defaultSuccessUrl("/users").permitAll()
 
+                ).logout(
+                        logout -> logout.
+                                logoutRequestMatcher(new AntPathRequestMatcher("/logout")).
+                                permitAll()
                 );
         return http.build();
     }
