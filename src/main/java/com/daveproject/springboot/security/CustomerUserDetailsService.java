@@ -27,9 +27,8 @@ public class CustomerUserDetailsService implements UserDetailsService {
             return new org.springframework.security.core.userdetails.User(user.getEmail(),
                     user.getPassword(), user.getRoles().stream().map((role) ->
             new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList()));
-        } else
-        {
+        } else {
             throw new UsernameNotFoundException("Invalid email or password");
-
+        }
     }
 }
