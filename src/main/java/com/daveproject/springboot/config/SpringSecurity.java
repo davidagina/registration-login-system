@@ -19,7 +19,7 @@ public class SpringSecurity {
                 .authorizeHttpRequests()
                 .requestMatchers("/register/**").permitAll()
                 .requestMatchers("/index").permitAll()
-                .requestMatchers("/user").hasRole("ADMIN")
+                .requestMatchers("/users").hasRole("ADMIN")
                 .and()
                 .formLogin(
                         form ->  form.loginPage("/login").loginProcessingUrl("/login")
